@@ -6,11 +6,9 @@ import {
   services,
   servicesSection,
 } from "@/data/services";
-import { whatsapp } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { ServicePriceCard } from "@/components/sections/ServicePriceCard";
 
 /**
@@ -136,15 +134,9 @@ export const ServicesSection = () => {
             <p className="text-sm font-medium text-primary">
               Not sure which service fits? We can help you choose.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Button href={whatsapp.href} variant="whatsapp">
-                <WhatsAppIcon />
-                {whatsapp.label}
-              </Button>
-              <Button href="/#contact" variant="outline">
-                Contact form
-              </Button>
-            </div>
+            <Button href="/#contact" variant="primary">
+              Get in touch
+            </Button>
           </div>
         </aside>
       </Container>

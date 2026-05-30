@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { navLinks, whatsapp } from "@/data/site";
-import { Button } from "@/components/ui/Button";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { navLinks } from "@/data/site";
 
 /** Client Component: mobile menu needs open/close state and button clicks. */
 export function MobileNav() {
@@ -48,18 +46,16 @@ export function MobileNav() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/#contact"
+                className="mt-2 block rounded-lg bg-primary px-3 py-2.5 text-center text-sm font-semibold text-white hover:bg-primary/90"
+                onClick={() => setOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
-          <div className="mt-4">
-            <Button
-              href={whatsapp.href}
-              variant="whatsapp"
-              className="w-full"
-              onClick={() => setOpen(false)}
-            >
-              <WhatsAppIcon />
-              {whatsapp.label}
-            </Button>
-          </div>
         </div>
       )}
     </div>

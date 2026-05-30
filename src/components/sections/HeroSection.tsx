@@ -49,26 +49,29 @@ export const HeroSection = () => {
               ))}
             </ul>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href={whatsapp.href} variant="whatsapp" className="px-6 py-3">
-                <WhatsAppIcon />
-                {whatsapp.label}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Button href="/#contact" variant="accent" className="px-6 py-3">
+                Get in touch
               </Button>
               <Button
-                href="/#contact"
+                href="/#services"
                 variant="outline"
                 className="border-white px-6 py-3 text-white hover:bg-white hover:text-primary"
               >
-                Get in touch
+                View fees
               </Button>
             </div>
 
             <a
-              href="/#services"
-              className="mt-4 inline-block text-sm font-medium text-white/75 underline-offset-4 hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+              href={whatsapp.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-white/80 underline-offset-4 hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
             >
-              View services &amp; fees
+              <WhatsAppIcon className="h-4 w-4" />
+              Or message us on WhatsApp
             </a>
+
           </div>
 
           <aside className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm sm:p-8">

@@ -68,12 +68,6 @@ export const pricingDisclaimers = [
   dependantsNote,
 ] as const;
 
-/** Pre-filled WhatsApp message for a service enquiry. */
-export const serviceWhatsAppHref = (title: string, fee: string) => {
-  const text = `Hi, I'd like to enquire about ${title} (fixed fee ${fee}).`;
-  return `https://wa.me/447539641223?text=${encodeURIComponent(text)}`;
-};
-
 /** Contact form deep link with visa type pre-selected. */
 export const serviceContactHref = (contactVisa: string) =>
   `/?visa=${contactVisa}#contact`;

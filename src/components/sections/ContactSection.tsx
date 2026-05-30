@@ -1,7 +1,6 @@
 import { site, whatsapp } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { ContactForm } from "@/components/sections/ContactForm";
 
@@ -46,10 +45,20 @@ export const ContactSection = () => {
                 </p>
                 <p className="mt-1 text-lg font-semibold text-primary">{site.website}</p>
               </div>
-              <Button href={whatsapp.href} variant="whatsapp" className="w-full">
-                <WhatsAppIcon />
-                {whatsapp.label}
-              </Button>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
+                  WhatsApp
+                </p>
+                <a
+                  href={whatsapp.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-flex items-center gap-2 text-lg font-semibold text-primary hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                >
+                  <WhatsAppIcon className="h-5 w-5 text-whatsapp" />
+                  Message us on WhatsApp
+                </a>
+              </div>
             </div>
           </div>
 
