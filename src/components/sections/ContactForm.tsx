@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { visaOptions } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 
@@ -39,6 +39,14 @@ export const ContactForm = () => {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    const visa = new URLSearchParams(window.location.search).get("visa");
+    if (!visa) return;
+    const isValid = visaOptions.some((option) => option.value === visa);
+    if (!isValid) return;
+    setForm((prev) => ({ ...prev, visaType: visa }));
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

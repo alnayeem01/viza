@@ -4,6 +4,7 @@ export type Service = {
   description: string;
   fee: string;
   dependantsFee?: string;
+  contactVisa: string;
 };
 
 export type Feature = {
