@@ -1,80 +1,41 @@
-import { site, whatsapp } from "@/data/site";
+import { contactFormIntro, contactIntro } from "@/data/contact";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { ContactQuickActions } from "@/components/sections/ContactQuickActions";
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="scroll-mt-[4.5rem] bg-background py-16 sm:py-20">
-      <Container>
-        <SectionHeading
-          eyebrow="Get started"
-          title="Contact Us"
-          description="Reach out by phone, email, WhatsApp, or the form below. We aim to respond promptly."
-        />
+    <section id="contact" className="scroll-mt-[4.5rem] border-t border-primary/10 bg-background">
+      <Container className="py-12 sm:py-14">
+        <header className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+            {contactIntro.eyebrow}
+          </p>
+          <h2 className="mt-1 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+            {contactIntro.title}
+          </h2>
+          <p className="mt-2 text-base leading-relaxed text-text-secondary">
+            {contactIntro.description}
+          </p>
+        </header>
 
-        <div className="grid gap-10 lg:grid-cols-5 lg:gap-14">
-          <div className="lg:col-span-2">
-            <div className="space-y-6 rounded-2xl border border-primary/10 bg-background-muted p-6 sm:p-8">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
-                  Phone
-                </p>
-                <a
-                  href={site.phoneHref}
-                  className="mt-1 block text-lg font-semibold text-primary hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                >
-                  {site.phone}
-                </a>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
-                  Email
-                </p>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="mt-1 block break-all text-lg font-semibold text-primary hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                >
-                  {site.email}
-                </a>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
-                  Website
-                </p>
-                <p className="mt-1 text-lg font-semibold text-primary">{site.website}</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
-                  WhatsApp
-                </p>
-                <a
-                  href={whatsapp.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-1 inline-flex items-center gap-2 text-lg font-semibold text-primary hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                >
-                  <WhatsAppIcon className="h-5 w-5 text-whatsapp" />
-                  Message us on WhatsApp
-                </a>
-              </div>
-            </div>
+        <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="order-2 lg:order-1 lg:col-span-4">
+            <ContactQuickActions />
           </div>
 
-          <div className="lg:col-span-3">
-            <h3 className="text-lg font-semibold text-primary">Send an enquiry</h3>
-            <p className="mt-2 text-sm text-text-secondary">
-              Prefer a quick chat? Use WhatsApp. For detailed questions, complete the form —
-              we will contact you using the details you provide.
-            </p>
-            <p className="mt-3 rounded-lg border border-primary/10 bg-background-muted px-4 py-3 text-sm text-text-secondary">
-              We provide advice within our IAA Level 1 scope only. The Home Office makes all
-              visa decisions; we cannot guarantee outcomes.
-            </p>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
+          <div className="order-1 lg:order-2 lg:col-span-8">
+            <article className="overflow-hidden rounded-xl border border-primary/15 bg-background-muted shadow-md">
+              <div className="bg-primary px-4 py-3 sm:px-5">
+                <h3 className="text-sm font-semibold text-white sm:text-base">
+                  {contactFormIntro.title}
+                </h3>
+                <p className="mt-0.5 text-sm text-white/80">{contactFormIntro.description}</p>
+              </div>
+              <div className="p-4 sm:p-6">
+                <ContactForm />
+              </div>
+            </article>
           </div>
         </div>
       </Container>

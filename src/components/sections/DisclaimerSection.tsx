@@ -5,7 +5,7 @@ import { DisclaimerIcon } from "@/components/ui/DisclaimerIcon";
 
 export const DisclaimerSection = () => {
   return (
-    <section className="border-y border-primary/10 bg-background-muted">
+    <section id="important-info" className="scroll-mt-[4.5rem] border-y border-primary/10 bg-background-muted">
       <Container className="py-12 sm:py-14">
         <header className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
