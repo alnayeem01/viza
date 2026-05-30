@@ -7,58 +7,62 @@ import {
   servicesSection,
 } from "@/data/services";
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ServicePriceCard } from "@/components/sections/ServicePriceCard";
 
 /**
- * Server Component: pricing & services — static data from src/data/services.ts
+ * Server Component: pricing & services — client copy in src/data/services.ts
  */
 export const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="scroll-mt-[4.5rem] border-t border-primary/5 bg-background-muted py-16 sm:py-20"
+      className="scroll-mt-[4.5rem] border-y border-primary/10 bg-background-muted"
     >
-      <Container>
-        <SectionHeading
-          eyebrow={servicesSection.eyebrow}
-          title={servicesSection.title}
-          description={servicesSection.description}
-        />
+      <Container className="py-12 sm:py-14">
+        <header className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+            {servicesSection.eyebrow}
+          </p>
+          <h2 className="mt-1 text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+            {servicesSection.title}
+          </h2>
+          <p className="mt-2 text-base leading-relaxed text-text-secondary">
+            {servicesSection.description}
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {pricingHighlights.map((item) => (
+              <li
+                key={item}
+                className="inline-flex items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary"
+              >
+                <span className="text-accent" aria-hidden>
+                  ✓
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </header>
 
-        <ul className="mx-auto mb-10 flex max-w-3xl flex-wrap justify-center gap-2 sm:gap-3">
-          {pricingHighlights.map((item) => (
-            <li
-              key={item}
-              className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-background px-3 py-1.5 text-xs font-medium text-primary sm:text-sm"
-            >
-              <span className="text-accent" aria-hidden>
-                ✓
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="hidden overflow-hidden rounded-2xl border border-primary/10 bg-background shadow-sm lg:block">
+        <div className="mt-8 hidden overflow-hidden rounded-xl border border-primary/15 shadow-md md:block">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Fixed adviser fees by immigration service</caption>
             <thead>
-              <tr className="border-b border-primary/10 bg-primary/5">
-                <th scope="col" className="px-6 py-4 font-semibold text-primary">
+              <tr className="bg-primary text-white">
+                <th scope="col" className="px-4 py-3 font-semibold">
                   Service
                 </th>
-                <th scope="col" className="px-6 py-4 font-semibold text-primary">
+                <th scope="col" className="px-4 py-3 font-semibold">
                   Details
                 </th>
-                <th scope="col" className="px-6 py-4 font-semibold text-primary">
+                <th scope="col" className="whitespace-nowrap px-4 py-3 font-semibold">
                   Fixed Fee
                 </th>
-                <th scope="col" className="px-6 py-4 font-semibold text-primary">
+                <th scope="col" className="whitespace-nowrap px-4 py-3 font-semibold">
                   Dependants
                 </th>
-                <th scope="col" className="px-6 py-4 text-right font-semibold text-primary">
+                <th scope="col" className="px-4 py-3 text-right font-semibold">
                   Enquire
                 </th>
               </tr>
@@ -68,35 +72,42 @@ export const ServicesSection = () => {
                 <tr
                   key={service.id}
                   className={
-                    index % 2 === 0 ? "bg-background" : "bg-background-muted/50"
+                    index % 2 === 0
+                      ? "bg-background"
+                      : "bg-background-muted/80"
                   }
                 >
-                  <th scope="row" className="px-6 py-4 align-top font-medium text-primary">
+                  <th
+                    scope="row"
+                    className="whitespace-nowrap px-4 py-3 align-top font-semibold text-primary"
+                  >
                     {service.title}
                   </th>
-                  <td className="max-w-md px-6 py-4 align-top text-text-secondary">
+                  <td className="max-w-sm px-4 py-3 align-top text-text-secondary">
                     {service.description}
                   </td>
-                  <td className="px-6 py-4 align-top">
-                    <span className="text-xs font-semibold text-text-secondary">Fixed Fee:</span>
-                    <p className="text-lg font-bold tabular-nums text-accent">{service.fee}</p>
+                  <td className="whitespace-nowrap px-4 py-3 align-top">
+                    <span className="text-xs font-semibold text-text-secondary">
+                      Fixed Fee:
+                    </span>
+                    <p className="text-xl font-bold tabular-nums text-accent">{service.fee}</p>
                   </td>
-                  <td className="px-6 py-4 align-top text-text-secondary">
+                  <td className="whitespace-nowrap px-4 py-3 align-top text-text-secondary">
                     {service.dependantsFee ? (
                       <>
                         <span className="text-xs font-semibold text-primary">Dependants:</span>
-                        <p className="mt-0.5">{service.dependantsFee}</p>
+                        <p className="font-medium">{service.dependantsFee}</p>
                       </>
                     ) : (
                       "—"
                     )}
                   </td>
-                  <td className="px-6 py-4 align-top text-right">
+                  <td className="whitespace-nowrap px-4 py-3 align-top text-right">
                     <Link
                       href={serviceContactHref(service.contactVisa)}
-                      className="font-semibold text-accent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      className="inline-flex rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                     >
-                      Enquire →
+                      Enquire
                     </Link>
                   </td>
                 </tr>
@@ -105,36 +116,32 @@ export const ServicesSection = () => {
           </table>
         </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:hidden">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 md:hidden">
           {services.map((service) => (
             <ServicePriceCard key={service.id} service={service} />
           ))}
         </div>
 
-        <aside className="mt-10 rounded-2xl border border-primary/10 bg-background p-6 sm:p-8">
+        <aside className="mt-6 rounded-xl border border-primary/15 border-l-4 border-l-gold bg-background px-4 py-4 sm:px-5 sm:py-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-accent">
             Important to know
           </p>
-          <ul className="mt-4 space-y-3">
+          <ul className="mt-2 space-y-2">
             {pricingDisclaimers.map((line) => (
               <li
                 key={line}
-                className="flex gap-3 text-sm leading-relaxed text-text-secondary"
+                className="text-sm leading-snug text-text-secondary"
               >
-                <span
-                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gold"
-                  aria-hidden
-                />
                 {line}
               </li>
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col gap-3 border-t border-primary/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-4 flex flex-col gap-3 border-t border-primary/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-medium text-primary">
               Not sure which service fits? We can help you choose.
             </p>
-            <Button href="/#contact" variant="primary">
+            <Button href="/#contact" variant="primary" className="shrink-0 sm:px-5">
               Get in touch
             </Button>
           </div>

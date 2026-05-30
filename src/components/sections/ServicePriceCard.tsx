@@ -8,32 +8,34 @@ type ServicePriceCardProps = {
 
 export const ServicePriceCard = ({ service }: ServicePriceCardProps) => {
   return (
-    <article className="flex flex-col rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition-all hover:border-primary/25 hover:shadow-md focus-within:ring-2 focus-within:ring-primary/25 sm:p-7">
-      <h3 className="text-lg font-bold text-primary sm:text-xl">{service.title}</h3>
-
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary sm:text-base">
-        {service.description}
-      </p>
-
-      <dl className="mt-6 space-y-3 border-t border-primary/10 pt-5">
-        <div>
-          <dt className="text-sm font-semibold text-primary">Fixed Fee:</dt>
-          <dd className="mt-0.5 text-2xl font-bold tabular-nums text-accent">{service.fee}</dd>
+    <article className="overflow-hidden rounded-xl border border-primary/15 bg-background shadow-sm transition-shadow hover:shadow-md">
+      <div className="flex items-start justify-between gap-3 border-b border-primary/10 bg-primary/5 px-4 py-3">
+        <h3 className="font-bold text-primary">{service.title}</h3>
+        <div className="shrink-0 text-right">
+          <p className="text-[10px] font-semibold uppercase tracking-wide text-text-secondary">
+            Fixed Fee:
+          </p>
+          <p className="text-xl font-bold tabular-nums leading-none text-accent">{service.fee}</p>
         </div>
-        {service.dependantsFee && (
-          <div>
-            <dt className="text-sm font-semibold text-primary">Dependants:</dt>
-            <dd className="mt-0.5 text-base text-text-secondary">{service.dependantsFee}</dd>
-          </div>
-        )}
-      </dl>
+      </div>
 
-      <Link
-        href={serviceContactHref(service.contactVisa)}
-        className="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-      >
-        Enquire about this service
-      </Link>
+      <div className="px-4 py-3">
+        <p className="text-sm leading-snug text-text-secondary">{service.description}</p>
+
+        {service.dependantsFee && (
+          <p className="mt-2 text-sm text-text-secondary">
+            <span className="font-semibold text-primary">Dependants:</span>{" "}
+            {service.dependantsFee}
+          </p>
+        )}
+
+        <Link
+          href={serviceContactHref(service.contactVisa)}
+          className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        >
+          Enquire →
+        </Link>
+      </div>
     </article>
   );
 };
