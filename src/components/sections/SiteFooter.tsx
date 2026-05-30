@@ -1,12 +1,7 @@
 import Link from "next/link";
+import { legalRoutes } from "@/data/legal/routes";
 import { site } from "@/data/site";
 import { Container } from "@/components/ui/Container";
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Complaints Procedure", href: "#" },
-  { label: "Terms & Fees", href: "#" },
-] as const;
 
 export function SiteFooter() {
   return (
@@ -31,7 +26,7 @@ export function SiteFooter() {
           className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm"
           aria-label="Legal"
         >
-          {legalLinks.map((link, index) => (
+          {legalRoutes.map((link, index) => (
             <span key={link.label} className="flex items-center gap-4">
               {index > 0 && <span className="text-white/30" aria-hidden>|</span>}
               <Link

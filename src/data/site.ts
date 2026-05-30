@@ -15,12 +15,13 @@ export const site = {
   copyrightYear: 2026,
 } as const;
 
+/** Use /#section so links work from legal pages (/privacy, /terms, etc.) as well as home. */
 export const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const visaOptions: VisaOption[] = [

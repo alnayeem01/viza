@@ -36,7 +36,7 @@ export function HeroSection() {
               {whatsapp.label}
             </Button>
             <Button
-              href="#contact"
+              href="/#contact"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-primary"
             >

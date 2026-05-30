@@ -1,3 +1,4 @@
+import { HashScroll } from "@/components/HashScroll";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -16,6 +17,7 @@ import { SiteFooter } from "@/components/sections/SiteFooter";
 export default function Home() {
   return (
     <>
+      <HashScroll />
       <SiteHeader />
       <main>
         <HeroSection />
