@@ -9,26 +9,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#22356F', // Deep Blue
-        },
-        accent: {
-          DEFAULT: '#27AE60', // Emerald Green
-        },
-        background: {
-          DEFAULT: '#FFFFFF', // White
-          muted: '#F5F7FA', // Light Gray
-        },
-        text: {
-          DEFAULT: '#222222', // Charcoal
-          secondary: '#666666', // Medium Gray
-        },
-        whatsapp: {
-          DEFAULT: '#25D366', // WhatsApp Green
-        },
-        gold: {
-          DEFAULT: '#FFC107', // Gold/Amber
-        },
+        primary: '#22356F', // Deep Blue
+        accent: '#27AE60', // Emerald Green
+        background: '#FFFFFF', // White
+        'background-muted': '#F5F7FA', // Light Gray
+        text: '#222222', // Charcoal
+        'text-secondary': '#666666', // Medium Gray
+        whatsapp: '#25D366', // WhatsApp Green
+        gold: '#FFC107', // Gold/Amber
       },
     },
   },
