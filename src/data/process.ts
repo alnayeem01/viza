@@ -1,5 +1,12 @@
 import type { ProcessStep } from "@/types";
 
+export const processIntro = {
+  eyebrow: "How we work",
+  title: "Our Process",
+  description:
+    "A clear, step-by-step approach from first consultation to submission.",
+} as const;
+
 export const processSteps: ProcessStep[] = [
   {
     step: 1,
