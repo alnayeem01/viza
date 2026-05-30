@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { privacyPolicy } from "@/data/legal/privacy";
+import { pageMetadata } from "@/data/seo";
 import { LegalDocumentView } from "@/components/legal/LegalDocumentView";
 import { LegalPageShell } from "@/components/legal/LegalPageShell";
 
@@ -7,10 +7,11 @@ import { LegalPageShell } from "@/components/legal/LegalPageShell";
  * SSG: This page is static HTML generated at `next build`.
  * Content lives in src/data/legal/privacy.ts — edit there, not here.
  */
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: privacyPolicy.description,
-};
+export const metadata = pageMetadata(
+  "Privacy Policy",
+  privacyPolicy.description,
+  "/privacy",
+);
 
 const PrivacyPage = () => {
   return (
