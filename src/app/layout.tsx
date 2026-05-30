@@ -29,8 +29,11 @@ export const metadata: Metadata = {
     "Spouse visa",
   ],
   icons: {
-    icon: [{ url: brand.icon, type: "image/png" }],
-    apple: [{ url: brand.appleIcon, type: "image/png" }],
+    icon: [
+      { url: brand.icon, sizes: "32x32", type: "image/png" },
+      { url: brand.icon192, sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: brand.appleIcon, sizes: "180x180", type: "image/png" }],
     shortcut: brand.icon,
   },
 };

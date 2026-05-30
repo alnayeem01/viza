@@ -5,6 +5,9 @@ import { site } from "@/data/site";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Container } from "@/components/ui/Container";
 
+const footerLinkClass =
+  "font-medium text-white/90 underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary";
+
 export const SiteFooter = () => {
   return (
     <footer className="border-t border-primary/10 bg-primary text-white">
@@ -23,16 +26,10 @@ export const SiteFooter = () => {
         </p>
 
         <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <a
-            href={site.phoneHref}
-            className="font-medium text-white/90 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-          >
+          <a href={site.phoneHref} className={footerLinkClass}>
             {site.phone}
           </a>
-          <a
-            href={`mailto:${site.email}`}
-            className="font-medium text-white/90 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-          >
+          <a href={`mailto:${site.email}`} className={footerLinkClass}>
             {site.email}
           </a>
         </div>
@@ -55,10 +52,7 @@ export const SiteFooter = () => {
           {legalRoutes.map((link, index) => (
             <span key={link.label} className="flex items-center gap-4">
               {index > 0 && <span className="text-white/30" aria-hidden>|</span>}
-              <Link
-                href={link.href}
-                className="text-white/90 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-              >
+              <Link href={link.href} className={footerLinkClass}>
                 {link.label}
               </Link>
             </span>

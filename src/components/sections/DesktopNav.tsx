@@ -6,8 +6,10 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/data/site";
 
 const navLinkClass = (active: boolean) =>
-  `rounded-md px-1 py-0.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-    active ? "text-primary" : "text-text-secondary hover:text-primary"
+  `rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+    active
+      ? "bg-primary/10 font-semibold text-primary"
+      : "text-text-secondary hover:bg-background-muted hover:text-primary"
   }`;
 
 export const DesktopNav = () => {
@@ -44,24 +46,22 @@ export const DesktopNav = () => {
   }, [pathname]);
 
   return (
-    <ul className="hidden items-center gap-8 md:flex">
-      {navLinks.map((link) => (
-        <li key={link.href}>
-          <Link
-            href={link.href}
-            className={navLinkClass(
-              pathname === "/" && activeSection === link.sectionId,
-            )}
-            aria-current={
-              pathname === "/" && activeSection === link.sectionId
-                ? "true"
-                : undefined
-            }
-          >
-            {link.label}
-          </Link>
-        </li>
-      ))}
+    <ul className="hidden items-center gap-2 md:flex">
+      {navLinks.map((link) => {
+        const isActive = pathname === "/" && activeSection === link.sectionId;
+
+        return (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className={navLinkClass(isActive)}
+              aria-current={isActive ? "true" : undefined}
+            >
+              {link.label}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };
