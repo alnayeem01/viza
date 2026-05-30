@@ -13,8 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Viza Ltd",
-  description: "Viza Ltd — professional services",
+  title: {
+    default: "Viza Ltd | UK Immigration Advice & Visa Assistance",
+    template: "%s | Viza Ltd",
+  },
+  description:
+    "Professional UK immigration advice and visa assistance. IAA regulated Level 1. Skilled Worker, Student, Spouse, Visitor visas and naturalisation.",
+  keywords: [
+    "UK immigration",
+    "visa advice",
+    "IAA regulated",
+    "Skilled Worker visa",
+    "Student visa",
+    "Spouse visa",
+  ],
 };
 
 export default function RootLayout({
