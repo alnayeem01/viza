@@ -1,3 +1,4 @@
+import { BackToTop } from "@/components/ui/BackToTop";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 
@@ -10,8 +11,11 @@ export const LegalPageShell = ({ children }: LegalPageShellProps) => {
   return (
     <>
       <SiteHeader />
-      <main className="flex-1 bg-background">{children}</main>
+      <main id="main" className="flex-1 bg-background">
+        {children}
+      </main>
       <SiteFooter />
+      <BackToTop />
     </>
   );
 };

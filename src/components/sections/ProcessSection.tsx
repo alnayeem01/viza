@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ProcessSection() {
   return (
-    <section id="process" className="scroll-mt-20 bg-background-muted py-16 sm:py-20">
+    <section id="process" className="scroll-mt-[4.5rem] bg-background-muted py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="How we work"

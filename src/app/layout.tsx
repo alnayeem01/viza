@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { brand } from "@/data/brand";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +28,11 @@ export const metadata: Metadata = {
     "Student visa",
     "Spouse visa",
   ],
+  icons: {
+    icon: [{ url: brand.icon, type: "image/png" }],
+    apple: [{ url: brand.appleIcon, type: "image/png" }],
+    shortcut: brand.icon,
+  },
 };
 
 export default function RootLayout({

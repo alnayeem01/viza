@@ -19,7 +19,7 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-20 bg-background py-16 sm:py-20">
+    <section id="about" className="scroll-mt-[4.5rem] bg-background py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="About us"

@@ -22,6 +22,7 @@ export type ProcessStep = {
 export type NavLink = {
   label: string;
   href: string;
+  sectionId: string;
 };
 
 export type VisaOption = {

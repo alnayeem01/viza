@@ -1,4 +1,5 @@
 import { HashScroll } from "@/components/HashScroll";
+import { BackToTop } from "@/components/ui/BackToTop";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -19,7 +20,7 @@ export default function Home() {
     <>
       <HashScroll />
       <SiteHeader />
-      <main>
+      <main id="main">
         <HeroSection />
         <AboutSection />
         <ServicesSection />
@@ -29,6 +30,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <SiteFooter />
+      <BackToTop />
     </>
   );
 }

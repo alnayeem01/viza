@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
  */
 export function ServicesSection() {
   return (
-    <section id="services" className="scroll-mt-20 bg-background-muted py-16 sm:py-20">
+    <section id="services" className="scroll-mt-[4.5rem] bg-background-muted py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Pricing"
@@ -19,7 +19,7 @@ export function ServicesSection() {
           {services.map((service) => (
             <article
               key={service.id}
-              className="flex flex-col rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition-shadow hover:shadow-md"
+              className="flex flex-col rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition-shadow hover:border-primary/20 hover:shadow-md focus-within:ring-2 focus-within:ring-primary/20"
             >
               <h3 className="text-xl font-bold text-primary">{service.title}</h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-text-secondary">
@@ -40,7 +40,11 @@ export function ServicesSection() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-text-secondary">{dependantsNote}</p>
+        <p className="mt-6 text-center text-sm text-text-secondary">
+          Home Office fees, health surcharges and other official charges are separate and
+          must be paid by you directly to the relevant authority.
+        </p>
+        <p className="mt-2 text-center text-sm text-text-secondary">{dependantsNote}</p>
       </Container>
     </section>
   );

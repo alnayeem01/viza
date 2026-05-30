@@ -17,11 +17,11 @@ export const site = {
 
 /** Use /#section so links work from legal pages (/privacy, /terms, etc.) as well as home. */
 export const navLinks: NavLink[] = [
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Why Us", href: "/#why-us" },
-  { label: "Process", href: "/#process" },
-  { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/#about", sectionId: "about" },
+  { label: "Services", href: "/#services", sectionId: "services" },
+  { label: "Why Us", href: "/#why-us", sectionId: "why-us" },
+  { label: "Process", href: "/#process", sectionId: "process" },
+  { label: "Contact", href: "/#contact", sectionId: "contact" },
 ];
 
 export const visaOptions: VisaOption[] = [

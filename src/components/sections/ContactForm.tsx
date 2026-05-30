@@ -240,11 +240,15 @@ export const ContactForm = () => {
       <Button
         type="submit"
         variant="primary"
-        className="w-full sm:w-auto px-8 py-3"
+        className="w-full px-8 py-3 sm:w-auto"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? "Sending…" : "Send enquiry"}
       </Button>
+      <p className="text-sm text-text-secondary">
+        By submitting, you agree we may contact you about your enquiry. We aim to respond
+        within a few working days.
+      </p>
     </form>
   );
 };

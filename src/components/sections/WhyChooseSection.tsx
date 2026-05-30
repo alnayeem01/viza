@@ -5,7 +5,7 @@ import { FeatureIcon } from "@/components/ui/FeatureIcon";
 
 export function WhyChooseSection() {
   return (
-    <section id="why-us" className="scroll-mt-20 bg-background py-16 sm:py-20">
+    <section id="why-us" className="scroll-mt-[4.5rem] bg-background py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Why Viza Ltd"
