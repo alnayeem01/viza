@@ -1,5 +1,4 @@
 import { features, whyChooseIntro } from "@/data/features";
-import { site } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { FeatureIcon } from "@/components/ui/FeatureIcon";
 
@@ -32,25 +31,6 @@ export const WhyChooseSection = () => {
             <p className="mt-3 text-base leading-relaxed text-white/85">
               {whyChooseIntro.description}
             </p>
-
-            <aside className="mt-6 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-sm sm:p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-white/70">
-                Regulated by the IAA
-              </p>
-              <p className="mt-2 text-sm font-medium text-white">
-                Authorised at {site.iaaLevel}
-              </p>
-              <dl className="mt-3 grid grid-cols-2 gap-3 text-sm">
-                <div>
-                  <dt className="text-white/60">Organisation</dt>
-                  <dd className="font-semibold text-white">{site.regulationNumber}</dd>
-                </div>
-                <div>
-                  <dt className="text-white/60">Adviser</dt>
-                  <dd className="font-semibold text-white">{site.adviserNumber}</dd>
-                </div>
-              </dl>
-            </aside>
           </div>
 
           <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3 lg:gap-3">

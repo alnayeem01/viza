@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { contactMethods, responseTimeNote } from "@/data/contact";
-import { site } from "@/data/site";
 import { ContactMethodIcon } from "@/components/ui/ContactMethodIcon";
 
 export const ContactQuickActions = () => {
@@ -44,16 +43,6 @@ export const ContactQuickActions = () => {
         ))}
       </ul>
 
-      <aside className="rounded-xl border border-primary/15 border-l-4 border-l-gold bg-background-muted px-4 py-3">
-        <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-          Regulated by the IAA
-        </p>
-        <p className="mt-1 text-sm text-text-secondary">
-          Authorised at {site.iaaLevel} · Org {site.regulationNumber} · Adviser{" "}
-          {site.adviserNumber}
-        </p>
-      </aside>
-
       <p className="flex items-center gap-2 text-sm text-text-secondary">
         <span
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent"
@@ -71,14 +60,12 @@ export const ContactQuickActions = () => {
       </p>
 
       <p className="text-sm text-text-secondary">
-        See{" "}
         <Link
           href="/#important-info"
           className="font-medium text-accent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           Important Information
-        </Link>{" "}
-        for scope, outcomes and fees.
+        </Link>
       </p>
     </div>
   );

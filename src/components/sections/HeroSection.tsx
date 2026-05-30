@@ -3,8 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
-const highlights = ["Fixed fees", "IAA Level 1", "Workers, families & students"];
-
 export const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-primary text-white">
@@ -38,17 +36,6 @@ export const HeroSection = () => {
               {site.description}
             </p>
 
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
-              {highlights.map((item) => (
-                <li key={item} className="flex items-center gap-1.5 text-sm text-white/80">
-                  <span className="text-accent" aria-hidden>
-                    ✓
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button href="/#contact" variant="accent" className="px-6 py-3">
                 Get in touch
@@ -76,7 +63,6 @@ export const HeroSection = () => {
 
           <aside className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm sm:p-8">
             <p className="text-sm font-semibold text-white">Contact &amp; regulation</p>
-
             <dl className="mt-5 space-y-4 text-sm">
               <div>
                 <dt className="text-white/60">Organisation</dt>

@@ -30,7 +30,6 @@ export const ContactSection = () => {
                 <h3 className="text-sm font-semibold text-white sm:text-base">
                   {contactFormIntro.title}
                 </h3>
-                <p className="mt-0.5 text-sm text-white/80">{contactFormIntro.description}</p>
               </div>
               <div className="p-4 sm:p-6">
                 <ContactForm />

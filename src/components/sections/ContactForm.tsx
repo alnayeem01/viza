@@ -350,7 +350,7 @@ export const ContactForm = () => {
         {status === "submitting" ? "Sending…" : "Send enquiry"}
       </Button>
       <p className="text-sm text-text-secondary">
-        By submitting, you agree we may contact you about your enquiry. {responseTimeNote}
+        By submitting, you agree we may contact you about your enquiry.
       </p>
     </form>
   );

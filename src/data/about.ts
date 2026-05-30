@@ -10,6 +10,13 @@ export const aboutSection = {
   servicesLink: "See fixed fees for each service →",
 } as const;
 
+export const aboutValues = [
+  "professional support",
+  "responsive communication",
+  "transparent fees",
+  "practical immigration guidance",
+] as const;
+
 export const aboutIntro = {
   experience:
     "Our adviser has extensive professional experience in immigration compliance, sponsor licence matters, right to work requirements and professional advisory services.",
@@ -23,11 +30,4 @@ export const visaAreas = [
   "Visitor visas",
   "Naturalisation applications",
   "Dependants applications",
-] as const;
-
-export const aboutValues = [
-  "professional support",
-  "responsive communication",
-  "transparent fees",
-  "practical immigration guidance",
 ] as const;

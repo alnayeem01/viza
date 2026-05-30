@@ -3,14 +3,11 @@ import { site, whatsapp } from "@/data/site";
 export const contactIntro = {
   eyebrow: "Get started",
   title: "Contact Us",
-  description:
-    "Reach out by phone, email, WhatsApp, or the form below. We aim to respond promptly.",
+  description: "Use the form or contact us directly by phone, email or WhatsApp.",
 } as const;
 
 export const contactFormIntro = {
   title: "Send an enquiry",
-  description:
-    "Complete the form and we will contact you using the details you provide.",
 } as const;
 
 export const responseTimeNote =

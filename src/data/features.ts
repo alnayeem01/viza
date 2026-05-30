@@ -3,8 +3,7 @@ import type { Feature } from "@/types";
 export const whyChooseIntro = {
   eyebrow: "Why Viza Ltd",
   title: "Why Choose Viza Ltd?",
-  description:
-    "Regulated advice, clear fixed fees, and support tailored to your immigration matter.",
+  description: "How we support you through your immigration matter.",
 } as const;
 
 export const features: Feature[] = [

@@ -1,11 +1,5 @@
 import Link from "next/link";
-import {
-  aboutIntro,
-  aboutSection,
-  aboutValues,
-  visaAreas,
-} from "@/data/about";
-import { site } from "@/data/site";
+import { aboutIntro, aboutSection, aboutValues, visaAreas } from "@/data/about";
 import { Container } from "@/components/ui/Container";
 
 /**
@@ -27,10 +21,6 @@ export const AboutSection = () => {
           </h2>
           <p className="mt-2 text-base leading-relaxed text-text-secondary">
             {aboutSection.description}
-          </p>
-          <p className="mt-3 inline-flex items-center gap-2 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
-            IAA authorised · {site.iaaLevel}
           </p>
         </header>
 

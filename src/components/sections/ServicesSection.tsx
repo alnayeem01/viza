@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
-  pricingDisclaimers,
-  pricingHighlights,
+  pricingNotes,
   serviceContactHref,
   services,
   servicesSection,
@@ -30,19 +29,6 @@ export const ServicesSection = () => {
           <p className="mt-2 text-base leading-relaxed text-text-secondary">
             {servicesSection.description}
           </p>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {pricingHighlights.map((item) => (
-              <li
-                key={item}
-                className="inline-flex items-center gap-1.5 rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary"
-              >
-                <span className="text-accent" aria-hidden>
-                  ✓
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
         </header>
 
         <div className="mt-8 hidden overflow-hidden rounded-xl border border-primary/15 shadow-md md:block">
@@ -127,15 +113,21 @@ export const ServicesSection = () => {
             Important to know
           </p>
           <ul className="mt-2 space-y-2">
-            {pricingDisclaimers.map((line) => (
-              <li
-                key={line}
-                className="text-sm leading-snug text-text-secondary"
-              >
+            {pricingNotes.map((line) => (
+              <li key={line} className="text-sm leading-snug text-text-secondary">
                 {line}
               </li>
             ))}
           </ul>
+          <p className="mt-3 text-sm text-text-secondary">
+            <Link
+              href="/#important-info"
+              className="font-medium text-accent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              Important Information
+            </Link>{" "}
+            — Home Office charges, scope, outcomes and when fees are due.
+          </p>
 
           <div className="mt-4 flex flex-col gap-3 border-t border-primary/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm font-medium text-primary">
