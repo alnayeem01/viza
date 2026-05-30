@@ -22,27 +22,82 @@ const initialState: FormState = {
   consent: false,
 };
 
+type SubmitStatus = "idle" | "submitting" | "success" | "error";
+
 const inputClass =
   "mt-1 w-full rounded-lg border border-primary/15 bg-background px-4 py-2.5 text-text shadow-sm transition-colors placeholder:text-text-secondary/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
 
 const labelClass = "block text-sm font-medium text-text";
 
-/**
- * Client Component: form needs state, validation, and submit handling.
- * Formspree integration will replace the placeholder submit handler.
- */
-export function ContactForm() {
-  const [form, setForm] = useState<FormState>(initialState);
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+const formspreeFormId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+/**
+ * Client Component: form state, validation, and Formspree submit (browser → Formspree).
+ * Form ID in .env.local — restart `npm run dev` after changing it.
+ */
+export const ContactForm = () => {
+  const [form, setForm] = useState<FormState>(initialState);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!form.consent) return;
 
-    // Placeholder until Formspree is connected
-    setStatus("success");
-    setForm(initialState);
-  }
+    const visaLabel =
+      visaOptions.find((option) => option.value === form.visaType)?.label ??
+      form.visaType;
+
+    if (!formspreeFormId || formspreeFormId === "your_form_id_here") {
+      setErrorMessage(
+        "Form ID not loaded. Put your real ID in .env.local (not your_form_id_here), delete .next, then run npm run dev again.",
+      );
+      setStatus("error");
+      return;
+    }
+
+    setStatus("submitting");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formspreeFormId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            visaType: visaLabel,
+            message: form.message,
+            _replyto: form.email,
+            _subject: `Website enquiry — ${visaLabel}`,
+          }),
+        },
+      );
+
+      const data = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+      } | null;
+
+      if (!response.ok) {
+        throw new Error(data?.error ?? "Unable to send your enquiry.");
+      }
+
+      setStatus("success");
+      setForm(initialState);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or contact us by phone or WhatsApp.",
+      );
+    }
+  };
 
   if (status === "success") {
     return (
@@ -68,6 +123,15 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      {status === "error" && errorMessage && (
+        <div
+          className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+          role="alert"
+        >
+          {errorMessage}
+        </div>
+      )}
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClass}>
@@ -81,6 +145,7 @@ export function ContactForm() {
             autoComplete="name"
             className={inputClass}
             value={form.name}
+            disabled={status === "submitting"}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
           />
         </div>
@@ -96,6 +161,7 @@ export function ContactForm() {
             autoComplete="tel"
             className={inputClass}
             value={form.phone}
+            disabled={status === "submitting"}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
           />
         </div>
@@ -113,6 +179,7 @@ export function ContactForm() {
           autoComplete="email"
           className={inputClass}
           value={form.email}
+          disabled={status === "submitting"}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
       </div>
@@ -127,6 +194,7 @@ export function ContactForm() {
           required
           className={inputClass}
           value={form.visaType}
+          disabled={status === "submitting"}
           onChange={(e) => setForm({ ...form, visaType: e.target.value })}
         >
           <option value="">Select a visa type</option>
@@ -149,6 +217,7 @@ export function ContactForm() {
           rows={5}
           className={inputClass}
           value={form.message}
+          disabled={status === "submitting"}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
         />
       </div>
@@ -159,6 +228,7 @@ export function ContactForm() {
           name="consent"
           required
           checked={form.consent}
+          disabled={status === "submitting"}
           onChange={(e) => setForm({ ...form, consent: e.target.checked })}
           className="mt-1 h-4 w-4 rounded border-primary/30 text-accent focus:ring-accent"
         />
@@ -167,9 +237,14 @@ export function ContactForm() {
         </span>
       </label>
 
-      <Button type="submit" variant="primary" className="w-full sm:w-auto px-8 py-3">
-        Send enquiry
+      <Button
+        type="submit"
+        variant="primary"
+        className="w-full sm:w-auto px-8 py-3"
+        disabled={status === "submitting"}
+      >
+        {status === "submitting" ? "Sending…" : "Send enquiry"}
       </Button>
     </form>
   );
-}
+};

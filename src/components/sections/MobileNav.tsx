@@ -6,10 +6,7 @@ import { navLinks, whatsapp } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
-/**
- * Client Component: mobile menu needs open/close state and button clicks.
- * Formspree and WhatsApp URL will be wired later — CTA uses placeholder href.
- */
+/** Client Component: mobile menu needs open/close state and button clicks. */
 export function MobileNav() {
   const [open, setOpen] = useState(false);
 
