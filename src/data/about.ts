@@ -1,0 +1,23 @@
+/** About section content — client copy; edit here only. */
+export const aboutIntro = {
+  description:
+    "Professional UK immigration advice and visa assistance for a range of straightforward immigration matters.",
+  experience:
+    "Our adviser has extensive professional experience in immigration compliance, sponsor licence matters, right to work requirements and professional advisory services.",
+} as const;
+
+export const visaAreas = [
+  "Skilled Worker visas",
+  "Student visas",
+  "Spouse and family visas",
+  "Visitor visas",
+  "Naturalisation applications",
+  "Dependants applications",
+] as const;
+
+export const aboutValues = [
+  "professional support",
+  "responsive communication",
+  "transparent fees",
+  "practical immigration guidance",
+] as const;
