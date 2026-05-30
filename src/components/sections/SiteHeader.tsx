@@ -3,7 +3,8 @@ import { navLinks, site, whatsapp } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
-import { MobileNav } from "@/components/sections/MobileNav";
+import { MobileNav } from "./MobileNav";
+
 
 export function SiteHeader() {
   return (

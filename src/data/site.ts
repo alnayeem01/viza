@@ -33,8 +33,7 @@ export const visaOptions: VisaOption[] = [
   { value: "other", label: "Other / Not sure" },
 ];
 
-/** Placeholder — WhatsApp link will be wired when number/URL is confirmed */
 export const whatsapp = {
   label: "WhatsApp Us",
-  href: "#contact",
+  href: "https://wa.me/447539641223",
 } as const;
