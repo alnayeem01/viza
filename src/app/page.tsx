@@ -1,4 +1,7 @@
+import type { Metadata } from "next";
+import { defaultDescription, defaultTitle } from "@/data/seo";
 import { HashScroll } from "@/components/HashScroll";
+import { HomeJsonLd } from "@/components/seo/HomeJsonLd";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -10,6 +13,12 @@ import { DisclaimerSection } from "@/components/sections/DisclaimerSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 
+export const metadata: Metadata = {
+  title: defaultTitle,
+  description: defaultDescription,
+  alternates: { canonical: "/" },
+};
+
 /**
  * Home page — Server Component (default).
  * Sections are composed here; only MobileNav and ContactForm use "use client".
@@ -18,6 +27,7 @@ import { SiteFooter } from "@/components/sections/SiteFooter";
 export default function Home() {
   return (
     <>
+      <HomeJsonLd />
       <HashScroll />
       <SiteHeader />
       <main id="main">
