@@ -26,9 +26,11 @@ export const LegalDocumentView = ({ document }: LegalDocumentViewProps) => {
           <p className="mt-2 text-sm text-text-secondary">
             Last updated: {document.lastUpdated}
           </p>
-          <p className="mt-4 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-text">
-            {document.draftNotice}
-          </p>
+          {document.draftNotice.trim() ? (
+            <p className="mt-4 rounded-lg border border-gold/40 bg-gold/10 px-4 py-3 text-sm text-text">
+              {document.draftNotice}
+            </p>
+          ) : null}
           {document.intro && (
             <p className="mt-6 text-base leading-relaxed text-text-secondary">
               {document.intro}
