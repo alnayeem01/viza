@@ -80,7 +80,7 @@ export const rootMetadata: Metadata = {
     images: [ogImagePath],
   },
   formatDetection: {
-    telephone: true,
+    // telephone: true, // temporarily hidden
     email: true,
   },
 };
@@ -116,7 +116,7 @@ export const organizationJsonLd = {
   url: siteUrl.href,
   logo: `${siteUrl.href}${brand.logo}`,
   email: site.email,
-  telephone: site.phoneHref.replace("tel:", ""),
+  // telephone: site.phoneHref.replace("tel:", ""), // temporarily hidden
   description: defaultDescription,
   areaServed: {
     "@type": "Country",
@@ -140,7 +140,7 @@ export const professionalServiceJsonLd = {
   name: brand.name,
   url: siteUrl.href,
   image: `${siteUrl.href}${brand.logo}`,
-  telephone: site.phoneHref.replace("tel:", ""),
+  // telephone: site.phoneHref.replace("tel:", ""), // temporarily hidden
   email: site.email,
   description: defaultDescription,
   areaServed: {

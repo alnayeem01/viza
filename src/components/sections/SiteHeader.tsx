@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { site, whatsapp } from "@/data/site";
+import { site } from "@/data/site";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
+// import { Button } from "@/components/ui/Button";
 import { SkipLink } from "@/components/ui/SkipLink";
 import { BrandLogo } from "@/components/ui/BrandLogo";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+// import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { DesktopNav } from "@/components/sections/DesktopNav";
 import { MobileNav } from "@/components/sections/MobileNav";
 
@@ -25,14 +25,17 @@ export const SiteHeader = () => {
 
         <DesktopNav />
 
+        {/* WhatsApp CTA — temporarily hidden
         <div className="hidden md:block">
           <Button href={whatsapp.href} variant="whatsapp">
             <WhatsAppIcon />
             {whatsapp.label}
           </Button>
         </div>
+        */}
 
         <div className="flex items-center gap-1 md:hidden">
+          {/* WhatsApp icon — temporarily hidden
           <a
             href={whatsapp.href}
             target="_blank"
@@ -42,6 +45,7 @@ export const SiteHeader = () => {
           >
             <WhatsAppIcon />
           </a>
+          */}
           <MobileNav />
         </div>
       </Container>

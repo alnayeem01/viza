@@ -1,7 +1,8 @@
-import { site, whatsapp } from "@/data/site";
+import { site } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+// import { whatsapp } from "@/data/site";
+// import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export const HeroSection = () => {
   return (
@@ -49,6 +50,7 @@ export const HeroSection = () => {
               </Button>
             </div>
 
+            {/* WhatsApp link — temporarily hidden
             <a
               href={whatsapp.href}
               target="_blank"
@@ -58,6 +60,7 @@ export const HeroSection = () => {
               <WhatsAppIcon className="h-4 w-4" />
               Or message us on WhatsApp
             </a>
+            */}
 
           </div>
 
@@ -72,6 +75,7 @@ export const HeroSection = () => {
                 <dt className="text-white/60">Adviser</dt>
                 <dd className="mt-0.5 font-semibold">{site.adviserNumber}</dd>
               </div>
+              {/* Phone — temporarily hidden
               <div>
                 <dt className="text-white/60">Phone</dt>
                 <dd className="mt-0.5 font-semibold">
@@ -83,6 +87,7 @@ export const HeroSection = () => {
                   </a>
                 </dd>
               </div>
+              */}
               <div>
                 <dt className="text-white/60">Email</dt>
                 <dd className="mt-0.5 font-semibold">

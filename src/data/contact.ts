@@ -1,9 +1,10 @@
-import { site, whatsapp } from "@/data/site";
+import { site } from "@/data/site";
+// import { whatsapp } from "@/data/site";
 
 export const contactIntro = {
   eyebrow: "Get started",
   title: "Contact Us",
-  description: "Use the form or contact us directly by phone, email or WhatsApp.",
+  description: "Use the form or contact us by email.",
 } as const;
 
 export const contactFormIntro = {
@@ -14,13 +15,14 @@ export const responseTimeNote =
   "We aim to respond within a few working days." as const;
 
 export const contactMethods = [
-  {
-    id: "phone",
-    label: "Phone",
-    value: site.phone,
-    href: site.phoneHref,
-    external: false,
-  },
+  // Phone — temporarily hidden
+  // {
+  //   id: "phone",
+  //   label: "Phone",
+  //   value: site.phone,
+  //   href: site.phoneHref,
+  //   external: false,
+  // },
   {
     id: "email",
     label: "Email",
@@ -28,13 +30,14 @@ export const contactMethods = [
     href: `mailto:${site.email}`,
     external: false,
   },
-  {
-    id: "whatsapp",
-    label: "WhatsApp",
-    value: "Message us",
-    href: whatsapp.href,
-    external: true,
-  },
+  // WhatsApp — temporarily hidden
+  // {
+  //   id: "whatsapp",
+  //   label: "WhatsApp",
+  //   value: "Message us",
+  //   href: whatsapp.href,
+  //   external: true,
+  // },
 ] as const;
 
 export type ContactMethodId = (typeof contactMethods)[number]["id"];

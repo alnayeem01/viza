@@ -26,9 +26,11 @@ export const SiteFooter = () => {
         </p>
 
         <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {/* Phone — temporarily hidden
           <a href={site.phoneHref} className={footerLinkClass}>
             {site.phone}
           </a>
+          */}
           <a href={`mailto:${site.email}`} className={footerLinkClass}>
             {site.email}
           </a>

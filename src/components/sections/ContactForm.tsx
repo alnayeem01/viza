@@ -121,7 +121,7 @@ export const ContactForm = () => {
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : "Something went wrong. Please try again or contact us by phone or WhatsApp.",
+          : "Something went wrong. Please try again or email us.",
       );
     }
   };
@@ -169,9 +169,11 @@ export const ContactForm = () => {
           >
             Send another message
           </Button>
+          {/* Call us — temporarily hidden
           <Button href={site.phoneHref} variant="primary">
             Call us
           </Button>
+          */}
         </div>
       </div>
     );
