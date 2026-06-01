@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - update-final-polish
+      - main
   workflow_dispatch:
 
 env:
