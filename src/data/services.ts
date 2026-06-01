@@ -4,7 +4,7 @@ export const servicesSection = {
   eyebrow: "Pricing",
   title: "Our Services & Fixed Fees",
   description:
-    "Transparent fixed fees for straightforward immigration matters. Fees below are for our professional advice and application support — not Home Office or NHS charges.",
+    "Transparent fixed fees for immigration matters. Fees below are for our professional advice and application support — not Home Office or NHS charges.",
 } as const;
 
 export const services: Service[] = [
@@ -48,7 +48,7 @@ export const services: Service[] = [
     id: "naturalisation",
     title: "Naturalisation",
     description:
-      "Support with straightforward British citizenship applications.",
+      "Support with British citizenship applications.",
     fee: "£500",
     contactVisa: "naturalisation",
   },

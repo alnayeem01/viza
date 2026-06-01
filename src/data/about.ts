@@ -3,7 +3,7 @@ export const aboutSection = {
   eyebrow: "About us",
   title: "About Viza Ltd",
   description:
-    "Professional UK immigration advice and visa assistance for a range of straightforward immigration matters.",
+    "Professional UK immigration advice and visa assistance for a range of immigration matters.",
   whoWeAre: "Who we are",
   assistWith: "We assist with",
   valuesHeading: "We aim to provide",
