@@ -17,17 +17,13 @@ export const ContactQuickActions = () => {
               {...(method.external
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className={`group flex items-center gap-3 rounded-xl border border-primary/15 bg-background px-3 py-3 shadow-sm transition-all hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                method.id === "whatsapp" ? "hover:border-whatsapp/40" : ""
-              }`}
+              className="group flex items-center gap-3 rounded-xl border border-primary/15 bg-background px-3 py-3 shadow-sm transition-all hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <span
-                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
-                  method.id === "whatsapp"
-                    ? "bg-whatsapp/15 text-whatsapp"
-                    : "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white"
-                }`}
-              >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white">
+              {/* WhatsApp styling — restore when whatsapp is back in contactMethods:
+                method.id === "whatsapp" ? "hover:border-whatsapp/40" : ""
+                method.id === "whatsapp" ? "bg-whatsapp/15 text-whatsapp" : "..."
+              */}
                 <ContactMethodIcon method={method.id} />
               </span>
               <span className="min-w-0">
