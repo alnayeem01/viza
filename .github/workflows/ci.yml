@@ -1,17 +1,13 @@
-name: Deploy to Firebase Hosting
+name: CI
 
 on:
+  pull_request:
   push:
     branches:
       - main
-  workflow_dispatch:
-
-env:
-  NEXT_PUBLIC_FORMSPREE_FORM_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_FORM_ID }}
-  NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
 jobs:
-  build-and-deploy:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -35,11 +31,3 @@ jobs:
 
       - name: Build static site
         run: npm run build
-
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          channelId: live
-          projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
