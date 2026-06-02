@@ -29,5 +29,6 @@ export const visaAreas = [
   "Spouse and family visas",
   "Visitor visas",
   "Naturalisation applications",
+  "Indefinite leave to remain",
   "Dependants applications",
 ] as const;

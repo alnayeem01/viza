@@ -30,6 +30,7 @@ export const visaOptions: VisaOption[] = [
   { value: "spouse-partner", label: "Spouse / Partner Visa" },
   { value: "visitor", label: "Visitor Visa" },
   { value: "naturalisation", label: "Naturalisation" },
+  { value: "ilr", label: "Indefinite Leave to Remain" },
   { value: "dependants", label: "Dependants" },
   { value: "other", label: "Other / Not sure" },
 ];

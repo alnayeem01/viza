@@ -52,6 +52,15 @@ export const services: Service[] = [
     fee: "£500",
     contactVisa: "naturalisation",
   },
+  {
+    id: "ilr",
+    title: "Indefinite Leave to Remain",
+    description:
+      "Support with ILR applications, eligibility and document preparation.",
+    fee: "£975",
+    dependantsFee: "£500 each",
+    contactVisa: "ilr",
+  },
 ];
 
 export const dependantsNote =
