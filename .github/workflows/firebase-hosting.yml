@@ -24,11 +24,8 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
-      - name: Enable Corepack and pin npm
-        run: |
-          corepack enable
-          corepack prepare npm@10.9.2 --activate
-          npm --version
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install dependencies
         run: npm ci

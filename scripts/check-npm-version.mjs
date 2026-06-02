@@ -1,34 +1,18 @@
-import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+const major = Number(
+  process.env.npm_config_user_agent?.match(/npm\/(\d+)/)?.[1] ?? 0,
+);
 
-const root = dirname(fileURLToPath(new URL("../package.json", import.meta.url)));
-const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-const required = pkg.packageManager?.match(/npm@(\d+\.\d+\.\d+)/)?.[1];
-
-if (!required) {
-  process.exit(0);
-}
-
-const current =
-  process.env.npm_config_user_agent?.match(/npm\/(\d+\.\d+\.\d+)/)?.[1] ??
-  "unknown";
-
-if (current === required) {
+if (major === 0 || major === 10) {
   process.exit(0);
 }
 
 console.error(`
-Wrong npm version: ${current} (this project requires npm ${required}).
+Unsupported npm major version: ${major} (use npm 10.x).
 
-Fix once on this machine:
   corepack enable
+  npm ci
 
-Then always install with:
-  npm ci              # normal — uses npm ${required} via Corepack
-  npm install         # only when adding/removing a package
-
-Do not use a globally installed npm 11+ in this repo — it will break CI.
+npm 11+ changes the lockfile and breaks CI. Use Node 22 + Corepack (see packageManager in package.json).
 `);
 
 process.exit(1);
