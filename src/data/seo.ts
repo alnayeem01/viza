@@ -10,7 +10,7 @@ export const siteUrl = new URL(
 export const defaultTitle = `${brand.name} | UK Immigration Advice & Visa Assistance`;
 
 export const defaultDescription =
-  "IAA Level 1 regulated UK immigration advisers. Fixed fees for Skilled Worker, Student, Spouse, Visitor visas and naturalisation. Contact Viza Ltd.";
+  "IAA Level 1 regulated UK immigration advisers. Fixed fees for Skilled Worker, Student, Graduate, Spouse, Visitor visas, ILR and naturalisation. Contact Viza Ltd.";
 
 export const seoKeywords = [
   "UK immigration advice",
@@ -18,6 +18,7 @@ export const seoKeywords = [
   "IAA regulated immigration adviser",
   "Skilled Worker visa UK",
   "Student visa UK",
+  "Graduate visa UK",
   "Spouse visa UK",
   "Visitor visa UK",
   "British naturalisation",
@@ -151,6 +152,7 @@ export const professionalServiceJsonLd = {
   knowsAbout: [
     "UK Skilled Worker visa",
     "UK Student visa",
+    "UK Graduate visa",
     "UK Spouse and partner visa",
     "UK Visitor visa",
     "British citizenship and naturalisation",

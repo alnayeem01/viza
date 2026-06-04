@@ -108,7 +108,7 @@ export const ServicesSection = () => {
           ))}
         </div>
 
-        <aside className="mt-6 rounded-xl border border-primary/15 border-l-4 border-l-gold bg-background px-4 py-4 sm:px-5 sm:py-5">
+        {/* <aside className="mt-6 rounded-xl border border-primary/15 border-l-4 border-l-gold bg-background px-4 py-4 sm:px-5 sm:py-5">
           <p className="text-xs font-semibold uppercase tracking-wider text-accent">
             Important to know
           </p>
@@ -137,7 +137,7 @@ export const ServicesSection = () => {
               Get in touch
             </Button>
           </div>
-        </aside>
+        </aside> */}
       </Container>
     </section>
   );

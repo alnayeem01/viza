@@ -26,6 +26,7 @@ export const aboutIntro = {
 export const visaAreas = [
   "Skilled Worker visas",
   "Student visas",
+  "Graduate visas",
   "Spouse and family visas",
   "Visitor visas",
   "Naturalisation applications",

@@ -27,6 +27,14 @@ export const services: Service[] = [
     contactVisa: "student",
   },
   {
+    id: "graduate",
+    title: "Graduate Visa",
+    description:
+      "Support with Graduate visa applications for eligible UK graduates.",
+    fee: "£500",
+    contactVisa: "graduate",
+  },
+  {
     id: "spouse-partner",
     title: "Spouse / Partner Visa",
     description:
@@ -58,7 +66,6 @@ export const services: Service[] = [
     description:
       "Support with ILR applications, eligibility and document preparation.",
     fee: "£975",
-    dependantsFee: "£500 each",
     contactVisa: "ilr",
   },
 ];

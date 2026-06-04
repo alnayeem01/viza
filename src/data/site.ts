@@ -27,6 +27,7 @@ export const navLinks: NavLink[] = [
 export const visaOptions: VisaOption[] = [
   { value: "skilled-worker", label: "Skilled Worker Visa" },
   { value: "student", label: "Student Visa" },
+  { value: "graduate", label: "Graduate Visa" },
   { value: "spouse-partner", label: "Spouse / Partner Visa" },
   { value: "visitor", label: "Visitor Visa" },
   { value: "naturalisation", label: "Naturalisation" },

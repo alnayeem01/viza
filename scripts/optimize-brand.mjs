@@ -1,6 +1,6 @@
 /**
  * Resize & compress Viza brand images for production.
- * Source: assets/viza-logo-source.png (or pass path as argv[2])
+ * Source: assets/viza-logo-source.jpg (or pass path as argv[2])
  */
 import { existsSync } from "node:fs";
 import { mkdirSync } from "node:fs";
@@ -11,11 +11,12 @@ import sharp from "sharp";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 
-const source =
-  process.argv[2] ??
-  (existsSync(join(root, "assets/viza-logo-source.png"))
-    ? join(root, "assets/viza-logo-source.png")
-    : join(root, "public/logo.png"));
+const defaultSource = [
+  "assets/viza-logo-source.jpg",
+  "assets/viza-logo-source.png",
+].map((p) => join(root, p)).find(existsSync);
+
+const source = process.argv[2] ?? defaultSource ?? join(root, "public/logo.png");
 
 const outputs = [
   {

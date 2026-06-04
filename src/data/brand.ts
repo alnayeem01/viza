@@ -1,6 +1,6 @@
 /**
  * Brand assets (production-optimized). After replacing artwork, run: npm run brand:optimize
- * Source file: assets/viza-logo-source.png
+ * Source file: assets/viza-logo-source.jpg
  */
 export const brand = {
   logo: "/logo.png",
